@@ -16,11 +16,11 @@ export class CreateTransactionUseCase {
   async execute(transaction: CreateTransactionDto): Promise<Transaction> {
     try {
       await this.transactionValidator.validateTransaction(transaction);
-      const newTransaction = await this.transactionRepository.createTransaction(transaction);
+      const createTransaction = await this.transactionRepository.createTransaction(transaction);
 
       if (transaction.amount > this.HIGH_AMOUNT_THRESHOLD) {
         return await this.transactionRepository.updateTransactionStatus(
-          newTransaction.id,
+          createTransaction.id,
           TransactionStatus.PENDING
         );
       }
@@ -30,16 +30,16 @@ export class CreateTransactionUseCase {
           transaction.originUserId,
           transaction.destinyUserId,
           transaction.amount,
-          newTransaction.id
+          createTransaction.id
         );
 
         return await this.transactionRepository.updateTransactionStatus(
-          newTransaction.id,
+          createTransaction.id,
           TransactionStatus.COMPLETED
         );
       } catch (error) {
         await this.transactionRepository.updateTransactionStatus(
-          newTransaction.id,
+          createTransaction.id,
           TransactionStatus.FAILED
         );
         throw error;

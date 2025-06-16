@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { SupabaseService } from '../services/supabase.service';
 import { Transaction, TransactionStatus } from '../models/transaction.model';
-import { CreateTransactionDto } from 'src/modules/transactions/newTransaction/dto/create-transaction.dto';
+import { CreateTransactionDto } from '../modules/transactions/newTransaction/dto/create-transaction.dto';
 
 @Injectable()
 export class TransactionRepository {

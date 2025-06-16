@@ -1,7 +1,7 @@
 import { Body, Controller, Post, HttpException, HttpStatus } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Transaction } from '../../../models/transaction.model';
-import { CreateTransactionUseCase } from './new-transaction.use-case';
+import { CreateTransactionUseCase } from './create-transaction.use-case';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 
 @ApiTags('transactions')

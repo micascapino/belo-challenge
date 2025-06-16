@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { TransactionController } from './modules/transactions/newTransaction/new-transaction.controller';
+import { TransactionController } from './modules/transactions/newTransaction/create-transaction.controller';
 import { SupabaseService } from './services/supabase.service';
 import { TransactionRepository } from './repositories/transaction.repository';
-import { CreateTransactionUseCase } from './modules/transactions/newTransaction/new-transaction.use-case';
+import { CreateTransactionUseCase } from './modules/transactions/newTransaction/create-transaction.use-case';
 import databaseConfig from './config/database.config';
 import { TransactionValidator } from './modules/transactions/newTransaction/validators/transaction.validator';
 import { UserRepository } from './repositories/user.repository';
