@@ -5,7 +5,7 @@
   "author": "Micaela Scapino",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node dist/main.js",
     "dev": "nest start --watch"
   },

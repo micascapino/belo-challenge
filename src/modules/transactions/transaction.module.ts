@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TransactionController } from './createTransaction/new-transaction.controller';
-import { CreateTransactionUseCase } from './createTransaction/new-transaction.use-case';
+import { TransactionController } from './newTransaction/create-transaction.controller';
+import { CreateTransactionUseCase } from './newTransaction/create-transaction.use-case';
 import { TransactionRepository } from '../../repositories/transaction.repository';
 import { UserRepository } from '../../repositories/user.repository';
-import { TransactionValidator } from './createTransaction/validators/transaction.validator';
+import { TransactionValidator } from './newTransaction/validators/transaction.validator';
 
 @Module({
   controllers: [TransactionController],

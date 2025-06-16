@@ -67,7 +67,6 @@ export class TransactionRepository {
         .eq('id', destinyUserId)
         .single();
 
-      // Debit from origin user
       const { error: debitError } = await supabase
         .from('users')
         .update({ balance: originUser.balance - amount })
@@ -75,7 +74,6 @@ export class TransactionRepository {
 
       if (debitError) throw debitError;
 
-      // Credit to destiny user
       const { error: creditError } = await supabase
         .from('users')
         .update({ balance: destinyUser.balance + amount })
@@ -83,7 +81,6 @@ export class TransactionRepository {
 
       if (creditError) throw creditError;
 
-      // Update transaction status to completed
       const { error: updateError } = await supabase
         .from('transactions')
         .update({ status: TransactionStatus.COMPLETED })
@@ -92,7 +89,6 @@ export class TransactionRepository {
       if (updateError) throw updateError;
 
     } catch (error) {
-      // If any error occurs, update transaction status to failed
       await supabase
         .from('transactions')
         .update({ status: TransactionStatus.FAILED })
