@@ -6,12 +6,10 @@ Este proyecto es una API REST construida con NestJS para la gestión de transacc
 
 - **NestJS**: Framework Node.js para construir aplicaciones del lado del servidor
 - **Swagger**: Documentación de la API
-- **PostgreSQL**: Base de datos relacional
 
 ## 📋 Prerrequisitos
 
-- Node.js (v14 o superior)
-- PostgreSQL
+- Node.js
 - npm o yarn
 
 ## 🔧 Instalación
@@ -34,19 +32,12 @@ SUPABASE_URL=
 SUPABASE_ANON_KEY=
 PORT=3000
 ```
+Los valores de dichas variables fueron compartidas por HackerRank
 
-4. Ejecutar las migraciones:
+4. Iniciar el servidor:
 ```bash
-npm run migration:run
-# o
-yarn migration:run
-```
+npm run start
 
-5. Iniciar el servidor:
-```bash
-npm run start:dev
-# o
-yarn start:dev
 ```
 
 ## 📚 Documentación de la API
@@ -70,8 +61,7 @@ http://localhost:3000/api
 Para ejecutar los tests:
 ```bash
 npm run test
-# o
-yarn test
+
 ```
 ## 📦 Estructura del Proyecto
 
