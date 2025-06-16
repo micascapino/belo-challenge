@@ -52,8 +52,8 @@ describe('CreateTransactionUseCase', () => {
     it('should create a successful transaction when amount is below threshold', async () => {
       const createdTransaction = { 
         id: '1', 
-        originUserId: mockTransaction.originUserId.toString(),
-        destinyUserId: mockTransaction.destinyUserId.toString(),
+        originUserId: mockTransaction.originUserId,
+        destinyUserId: mockTransaction.destinyUserId,
         amount: mockTransaction.amount,
         status: TransactionStatus.PENDING,
         createdAt: new Date()
@@ -101,8 +101,8 @@ describe('CreateTransactionUseCase', () => {
 
       const createdTransaction = { 
         id: '1', 
-        originUserId: highAmountTransaction.originUserId.toString(),
-        destinyUserId: highAmountTransaction.destinyUserId.toString(),
+        originUserId: highAmountTransaction.originUserId,
+        destinyUserId: highAmountTransaction.destinyUserId,
         amount: highAmountTransaction.amount,
         status: TransactionStatus.PENDING,
         createdAt: new Date()
@@ -138,8 +138,8 @@ describe('CreateTransactionUseCase', () => {
     it('should fail transaction when there is insufficient balance', async () => {
       const createdTransaction = { 
         id: '1', 
-        originUserId: mockTransaction.originUserId.toString(),
-        destinyUserId: mockTransaction.destinyUserId.toString(),
+        originUserId: mockTransaction.originUserId,
+        destinyUserId: mockTransaction.destinyUserId,
         amount: mockTransaction.amount,
         status: TransactionStatus.PENDING,
         createdAt: new Date()

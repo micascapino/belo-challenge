@@ -12,10 +12,10 @@ export class Transaction {
   id: string;
 
   @ApiProperty({ description: 'The ID of the user who sent the money' })
-  originUserId: string;
+  originUserId: number;
 
   @ApiProperty({ description: 'The ID of the user who received the money' })
-  destinyUserId: string;
+  destinyUserId: number;
 
   @ApiProperty({ description: 'The amount of money transferred' })
   amount: number;
