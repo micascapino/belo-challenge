@@ -8,16 +8,24 @@ export enum TransactionStatus {
 }
 
 export class Transaction {
-  @ApiProperty({ description: 'The unique identifier of the transaction' })
+  @ApiProperty({ description: 'The unique identifier of the transaction',
+    example: '1234b-1234b-1234b-1234b'
+   })
   id: string;
 
-  @ApiProperty({ description: 'The ID of the user who sent the money' })
+  @ApiProperty({ description: 'The ID of the user who sent the money',
+    example: 1
+   })
   originUserId: number;
 
-  @ApiProperty({ description: 'The ID of the user who received the money' })
+  @ApiProperty({ description: 'The ID of the user who received the money',
+    example: 2
+   })
   destinyUserId: number;
 
-  @ApiProperty({ description: 'The amount of money transferred' })
+  @ApiProperty({ description: 'The amount of money transferred',
+    example: 1000
+   })
   amount: number;
 
   @ApiProperty({ 
